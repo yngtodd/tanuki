@@ -4,7 +4,14 @@ These little bandits are mischievous. Be careful, they will steal your heart (an
 
  ![Alt text](/img/tanuki1.png?raw=true "Optional Title") ![Alt text](/img/tanuki2.png?raw=true "Optional Title")
 
+<div class='img-container'>
+    <img width="200" src="https://github.com/yngtodd/tanuki/blob/master/img/tanuki1.png">
+    <img width="200" src="https://github.com/yngtodd/tanuki/blob/master/img/tanuki2.png">
+</div>
+
+
+
 <p align="center">
     <img width="200" src="https://github.com/yngtodd/tanuki/blob/master/img/tanuki1.png">
-    <img width="200" src="https://github.com/yngtodd/tanuki/blob/master/img/tanuki1.png">
+    <img width="200" src="https://github.com/yngtodd/tanuki/blob/master/img/tanuki2.png">
 </p>
