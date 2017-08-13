@@ -5,5 +5,6 @@ These little bandits are mischievous. Be careful, they will steal your heart (an
 <p align="center">
     <img width="200" src="https://github.com/yngtodd/tanuki/blob/master/img/tanuki1.png">
     <img width="200" src="https://github.com/yngtodd/tanuki/blob/master/img/tanuki2.png">
+    <figcaption>Fig1. - <a href="url">@atamotono </a> </figcaption>
 </p>
  
