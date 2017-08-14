@@ -44,7 +44,7 @@ jobs:
           name: run tests
           command: |
             . venv/bin/activate
-            pytest --cov bandits 
+            py.test --cov bandits 
 
       - store_artifacts:
           path: test-reports
