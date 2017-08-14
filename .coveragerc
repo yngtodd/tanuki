@@ -1,0 +1,5 @@
+[run]
+source = tanuki
+omit = 
+  tanuki/tests/*
+
