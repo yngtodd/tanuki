@@ -1,5 +1,3 @@
 numpy
 scikit-learn
 scipy
-pytest
-pytest-cov
