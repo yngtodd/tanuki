@@ -47,7 +47,11 @@ jobs:
           name: run tests
           command: |
             . venv/bin/activate
-            py.test --cov tanuki 
+            py.test --cov tanuki
+          post:
+                 - coverage run src/*.py
+                 - coverage report
+                 - coveralls 
 
       - store_artifacts:
           path: test-reports
