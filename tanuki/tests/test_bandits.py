@@ -11,7 +11,7 @@ def test_gauss_bandit():
   """
   Quick test to build with Circle CI.
   """
-  bandit = GaussianBandit()
+  bandit = GaussianBandit(10)
   mu_default = 0
   sigma_default = 1
 
