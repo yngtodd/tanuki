@@ -47,7 +47,7 @@ jobs:
           name: run tests
           command: |
             . venv/bin/activate
-            py.test bandits 
+            py.test --cov tanuki 
 
       - store_artifacts:
           path: test-reports
