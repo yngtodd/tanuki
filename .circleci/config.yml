@@ -48,7 +48,6 @@ jobs:
           command: |
             . venv/bin/activate
             py.test --cov bandits 
-            coverage report -m 
 
       - store_artifacts:
           path: test-reports
