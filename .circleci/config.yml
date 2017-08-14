@@ -33,6 +33,9 @@ jobs:
             python3 -m venv venv
             . venv/bin/activate
             pip install -r requirements.txt
+            pip install pytest
+            pip install pytest-cov
+            pip install nose
 
       - save_cache:
           paths:
@@ -45,6 +48,7 @@ jobs:
           command: |
             . venv/bin/activate
             py.test --cov bandits 
+            coverage report -m 
 
       - store_artifacts:
           path: test-reports
