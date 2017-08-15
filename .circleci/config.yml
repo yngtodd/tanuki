@@ -51,8 +51,8 @@ jobs:
           command: |
             . venv/bin/activate
             py.test --cov tanuki
+            coverage run tanuki/*.py
           post:
-            - coverage run tanuki/*.py
             - coverage report
             - COVERALLS_REPO_TOKEN=F1oxairgY7EpRw8FVTvm6XNjmAZgyPrIW coveralls 
 
