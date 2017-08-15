@@ -51,7 +51,6 @@ jobs:
           command: |
             . venv/bin/activate
             py.test --cov tanuki
-            coverage run --source=tanuki/*.py
           post:
             - coverage report
 
