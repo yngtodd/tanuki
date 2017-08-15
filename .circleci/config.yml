@@ -11,6 +11,7 @@ jobs:
       - image: circleci/python:3.6.1
         environment:
           CODECLIMATE_REPO_TOKEN: 1a2fe6d52d4ff5eff06b8c65a4dfee73a145780342d6aaef5c2a020277fdf118
+          repo_token: F1oxairgY7EpRw8FVTvm6XNjmAZgyPrIW
       
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
