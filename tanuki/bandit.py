@@ -1,5 +1,6 @@
 import numpy as np
 
+
 class MultiArmedBandit(object):
     """
     A multi-armed bandit aka たぬき
