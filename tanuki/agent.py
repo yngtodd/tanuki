@@ -42,9 +42,9 @@ class Agent(object):
         else:
             g = self.gamma
 
-         q = self._value_estimates[self.last_action]
-         self._value_estimates[self.last_action] += g * (reward - q)
-         self.t += 1
+        q = self._value_estimates[self.last_action]
+        self._value_estimates[self.last_action] += g * (reward - q)
+        self.t += 1
 
     @property
     def value_estimates(self):
