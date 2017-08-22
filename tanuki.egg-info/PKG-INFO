@@ -1,0 +1,11 @@
+Metadata-Version: 1.0
+Name: tanuki
+Version: 0.1.0
+Summary: A library for bandits
+Home-page: https://github.com/yngtodd/tanuki
+Author: Todd Young
+Author-email: young.todd.mk@gmail.com
+License: UNKNOWN
+Description: UNKNOWN
+Keywords: reinforcement learning,bandits
+Platform: UNKNOWN
