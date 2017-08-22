@@ -27,11 +27,11 @@ class EpsilonGreedyPolicy(Policy):
 
     def choose(self, agent):
         if np.random.random() < self.epsilon:
-            return np.random_choice(len(agent.value_estimates))
+            return np.random.choice(len(agent.value_estimates))
         else:
             action = np.argmax(agent.value_estimates)
             check = np.where(agent.value_estimates == action)[0]
             if len(check) == 0:
                 return 0
             else:
-                return np.random_choice(check)
+                return np.random.choice(check)
