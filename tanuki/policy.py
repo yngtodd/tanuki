@@ -6,7 +6,7 @@ class Policy(object):
     A policy prescribes an action to be taken based on the memory of the agent.
     """
     def __str__(self):
-        retun 'generic policy'
+        return 'generic policy'
 
     def choose(self, agent):
         return 0
