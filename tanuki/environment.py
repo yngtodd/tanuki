@@ -1,7 +1,7 @@
 import numpy as np
 
 
-class Environment(self):
+class Environment(object):
     def __init__(self, bandit, agents, label='Multi-Armed Bandit'):
         self.bandit = bandit
         self.agents = agents
