@@ -33,14 +33,6 @@ class GaussianBandit(MultiArmedBandit):
         self.actions_values = np.random.normal(self.mu, self.sigma, self.k)
         self.optimal = np.argmax(self.actions_values)
 
-    def pull(self):
+    def pull(self, action):
         return (np.random.normal(self.action_values[action]),
                 action == self.optimal)
-
-
-
-
-
-
-
-
