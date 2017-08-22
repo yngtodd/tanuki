@@ -34,7 +34,7 @@ class Agent(object):
         self.last_action = action
         return action
 
-    def observe(self):
+    def observe(self, reward):
         self.action_atempts[self.last_action] += 1
 
         if self.gamma is None:
