@@ -6,7 +6,7 @@ except ImportError:
 setup(
     name = 'tanuki',
     packages = ['tanuki'],
-    install_requires=['numpy', 'scikit-learn'],
+    install_requires=['numpy', 'scikit-learn', 'matplotlib', 'seaborn'],
     version = '0.1.0',
     description = 'A library for bandits',
     author = 'Todd Young',
