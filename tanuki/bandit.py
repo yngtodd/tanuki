@@ -30,7 +30,7 @@ class GaussianBandit(MultiArmedBandit):
         self.reset()
 
     def reset(self):
-        self.actions_values = np.random.normal(self.mu, self.sigma, self.k)
+        self.action_values = np.random.normal(self.mu, self.sigma, self.k)
         self.optimal = np.argmax(self.actions_values)
 
     def pull(self, action):
