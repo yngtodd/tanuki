@@ -30,7 +30,7 @@ class Agent(object):
         self.t = 0
 
     def choose(self):
-        self.action = self.policy.choose(self)
+        action = self.policy.choose(self)
         self.last_action = action
         return action
 
