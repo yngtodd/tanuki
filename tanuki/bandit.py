@@ -23,7 +23,7 @@ class GaussianBandit(MultiArmedBandit):
     Gaussian bandits model the reward of a given arm as normal distribution
     with provided mean and standard deviation.
     """
-    def __init__(self, k, mu=0, sigma=1):
+    def __init__(self, k_arms, mu=0, sigma=1):
         super(GaussianBandit, self).__init__(k_arms)
         self.mu = mu
         self.sigma = sigma

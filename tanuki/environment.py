@@ -4,6 +4,8 @@ import seaborn as sns
 import scipy.stats as stats
 
 
+BetaAgent = None
+
 class Environment(object):
     def __init__(self, bandit, agents, label='Multi-Armed Bandit'):
         self.bandit = bandit
@@ -56,9 +58,9 @@ class Environment(object):
         plt.title(self.label + ' - Agent Beliefs')
 
         rows = 2
-        cols = int(self.bandit.k / 2)
+        cols = int(self.bandit.k_arms / 2)
 
-        axes = [plt.subplot(rows, cols, i+1) for i in range(self.bandit.k)]
+        axes = [plt.subplot(rows, cols, i+1) for i in range(self.bandit.k_arms)]
         for i, val in enumerate(self.bandit.action_values):
             color = 'r' if i == self.bandit.optimal else 'k'
             axes[i].vlines(val, 0, 1, colors=color)
@@ -86,7 +88,7 @@ class Environment(object):
                 ax.set_xticks([0, 0.25, 0.5, 0.75, 1.0])
                 ax.set_xticklabels(['0', '', '0.5', '', '1'])
             if i == int(cols/2):
-                title = '{}-arm Bandit - Agent Estimators'.format(self.bandit.k)
+                title = '{}-arm Bandit - Agent Estimators'.format(self.bandit.k_arms)
                 ax.set_title(title)
             if i == min_p:
                 ax.legend(self.agents)
