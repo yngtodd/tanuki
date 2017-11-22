@@ -9,11 +9,11 @@ class Agent(object):
     """
     def __init__(self, bandit, policy, prior=0, gamma=None):
         self.policy = policy
-        self.k = bandit.k
+        self.k_arms = bandit.k_arms
         self.prior = prior
         self.gamma = gamma
-        self._value_estimates = prior * np.ones(self.k)
-        self.action_attempts = np.zeros(self.k)
+        self._value_estimates = prior * np.ones(self.k_arms)
+        self.action_attempts = np.zeros(self.k_arms)
         self.t = 0
         self.last_action = None
 
@@ -49,3 +49,38 @@ class Agent(object):
     @property
     def value_estimates(self):
         return self._value_estimates
+
+
+class GradientAgent(Agent):
+    """
+    The Gradient Agent learns the relative difference between actions instead of
+    determining estimates of reward values. It effectively learns a preference
+    for one action over another.
+    """
+    def __init__(self, bandit, policy, prior=0, alpha=0.1, baseline=True):
+        super(GradientAgent, self).__init__(bandit, policy, prior)
+        self.alpha = alpha
+        self.baseline = baseline
+        self.average_reward = 0
+
+    def __str__(self):
+        return "g/\u03B1={}, bl={}".format(self.alpha, self.baseline)
+
+    def observe(self, reward):
+        self.action_attempts[self.last_action] += 1
+
+        if self.baseline:
+            diff = reward - self.average_reward
+            self.average_reward += 1/np.sum(self.action_attempts) * diff
+
+        pi = np.exp(self.value_estimates) / np.sum(np.exp(self.value_estimates))
+
+        ht = self.value_estimates[self.last_action]
+        ht += self.alpha*(reward - self.average_reward) * (1 - pi[self.last_action])
+        self._value_estimates -= self.alpha * (reward - self.average_reward) * pi
+        self._value_estimates[self.last_action] = ht
+        self.t += 1
+
+    def reset(self):
+        super(GradientAgent, self).reset()
+        self.average_reward = 0
