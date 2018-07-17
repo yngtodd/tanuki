@@ -18,7 +18,7 @@ class Agent(object):
         self.last_action = None
 
     def __str__(self):
-        return f'f/{policy}'
+        return f'f/{self.policy}'
 
     def reset(self):
         """
