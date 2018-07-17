@@ -18,7 +18,7 @@ class Agent(object):
         self.last_action = None
 
     def __str__(self):
-        return 'f/{}'.format(str(self.policy))
+        return f'f/{policy}'
 
     def reset(self):
         """
@@ -64,7 +64,7 @@ class GradientAgent(Agent):
         self.average_reward = 0
 
     def __str__(self):
-        return "g/\u03B1={}, bl={}".format(self.alpha, self.baseline)
+        return f"g/\u03B1={self.alpha}, bl={self.baseline}"
 
     def observe(self, reward):
         self.action_attempts[self.last_action] += 1

@@ -12,6 +12,22 @@ class Policy(object):
         return 0
 
 
+class RandomPolicy(Policy):
+    """
+    The Random policy randomly selects from all available actions with no
+    consideration to which is apparently best. This can be seen as a special
+    case of EpsilonGreedy where epsilon = 1 i.e. always explore.
+    """
+    def __init__(self):
+        super(RandomPolicy, self).__init__(1)
+
+    def __str__(self):
+        return 'Random policy.'
+
+    def choose(self, agent):
+        return np.random.choice(len(agent.value_estimates))
+
+
 class EpsilonGreedyPolicy(Policy):
     """
     The Epsilon-Greedy Policy will choose a random action with probability
@@ -27,6 +43,7 @@ class EpsilonGreedyPolicy(Policy):
 
     def choose(self, agent):
         if np.random.random() < self.epsilon:
+            # Choose randomly
             return np.random.choice(len(agent.value_estimates))
         else:
             action = np.argmax(agent.value_estimates)

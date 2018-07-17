@@ -7,6 +7,9 @@ import scipy.stats as stats
 BetaAgent = None
 
 class Environment(object):
+    """
+    Where agents and bandits interact.
+    """
     def __init__(self, bandit, agents, label='Multi-Armed Bandit'):
         self.bandit = bandit
         self.agents = agents
